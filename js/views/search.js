@@ -19,6 +19,7 @@ define([
             'keydown input': 'search',
         },
 
+        // View 'construtor'
         initialize: function () {
             Streams.on("reset", this.renderItems.bind(this));
             Streams.on("add", this.renderItem.bind(this));
@@ -26,17 +27,19 @@ define([
             $(window).scroll(this.infinite.bind(this));
         },
 
+        // Render the template
         render: function () {
             $(this.el).html(this.template());
 
             this.$input = this.$('input[name="search"]');
             this.$items = this.$('.search-items');
             this.$loading = this.$('.loading');
-            this.$noResults = this.$('#no-resuls');
+            this.$noResults = this.$('#no-results');
 
             return this;
         },
 
+        // Render items on collection reset
         renderItems: function() {
             this.$loading.hide();
 
@@ -52,11 +55,13 @@ define([
 
         },
 
+        // Render individual item
         renderItem: function(model) {
             var view = new searchItemView({ item: model });
             this.$items.append(view.el);
         },
 
+        // Scroll callback listener for infinite scroll
         infinite: function(event) {
             if($(window).scrollTop() + $(window).height() == $(document).height()) {
                 this.$loading.show();
@@ -64,15 +69,20 @@ define([
             }
         },
 
+        // Search stream
         search: function(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
-                this.$items.empty();
-                this.$loading.show();
-                this.fetch(true);
+
+                if (this.$input.val().length) {
+                    this.$items.empty();
+                    this.$loading.show();
+                    this.fetch(true);
+                }
             }
         },
 
+        // Collection data fetch
         fetch: function(reset) {
             Streams.fetch({
                 reset: reset,

@@ -1,7 +1,11 @@
 <div class="thumb">
-    <img src="<%- item.get('preview').medium %>" />
+    <a href="#stream/<%- item.get('_id') %>">
+    	<img src="<%- item.get('preview').medium %>" />
+    </a>
 </div>
 <div class="info">
-    <a href="#" class="streamer"><%- item.get('channel').display_name %></a>
+    <a href="#stream/<%- item.get('_id') %>" class="streamer">
+    	<%- item.get('channel').display_name %>
+    </a>
     <span class="viewers"><%- item.get('viewers') %> Viewers</span>
 </div>

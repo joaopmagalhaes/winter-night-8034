@@ -1,19 +1,27 @@
 .container-fluid {
   margin-bottom: 30px;
-  width: 960px;
+  width: 990px;
 }
 
-.page-header {
+.container-fluid .page-header {
   text-align: center;
 }
 
-.page-header a {
+.container-fluid .page-header a {
   font-size: 11px;
 }
 
-.page-header p {
+.container-fluid .page-header p {
   font-size: 10px;
   margin: 0;
+}
+
+.container-fluid .content {
+  width: 100%;
+}
+
+.search-container {
+  width: 100%;
 }
 
 .search-container .no-results {
@@ -54,6 +62,7 @@
 }
 
 .search-container .search-items .search-item .thumb img {
+  cursor: pointer;
   width: 100%;
 }
 
@@ -75,4 +84,53 @@
 .search-container .loading img {
   height: 60px;
   width: 60px;
+}
+
+.stream-container {
+  width: 100%;
+}
+
+.stream-container .stream {
+  margin: 20px 0;
+}
+
+.stream-container .info {
+  width: 100%;
+}
+
+.stream-container .info .channel-logo {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.stream-container .info .channel-logo img {
+  height: 60px;
+}
+
+.stream-container .info .text {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.stream-container .info .text .status {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.stream-container .info .views-info {
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+  vertical-align: top;
+}
+
+.stream-container .info .views-info span {
+  color: #009ed0;
+  margin-left: 10px;
+  pointer: default;
+}
+
+.stream-container .info .views-info span span {
+  margin-right: 5px;
 }

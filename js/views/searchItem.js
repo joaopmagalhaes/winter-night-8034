@@ -7,11 +7,6 @@ define([
 
         template: _.template(searchItemTemplate),
 
-        events: {
-            'click .thumb': 'viewStream',
-            'click .streamer': 'viewStream',
-        },
-
         // View 'construtor'
         initialize: function(params) {
             this.item = params.item;
@@ -25,12 +20,6 @@ define([
             }));
 
             return this;
-        },
-
-        viewStream: function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            Backbone.View.showView(new streamView({stream: this.item}));
         },
     });
 

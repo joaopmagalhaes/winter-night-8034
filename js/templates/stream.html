@@ -1,17 +1,37 @@
-<section class="page-header">
-    <h1><%- stream.get('game') %></h1>
-</section>
-<a href="#" class="back">back</a>
+<div class="header">
+    <h2>
+        <a href="<%- stream.get('channel').url %>" target="_blank">
+            <%- stream.get('channel').display_name %>
+        </a>
+    </h2>
+</div>
+<a href="#" class="back">&#8592; back</a>
 <div class="stream">
-	<div class="info"></div>
-	<div class="stream">
-		<iframe
-			src="http://player.twitch.tv/?channel=<%- stream.get('channel').name %>"
-			height="360"
-			width="640"
-			frameborder="0"
-			scrolling="no"
-			allowfullscreen="true">
-		</iframe>
-	</div>
+    <iframe
+        src="http://player.twitch.tv/?channel=<%- stream.get('channel').name %>"
+        height="540"
+        width="960"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen="true">
+    </iframe>
+</div>
+<div class="info">
+    <div class="channel-logo">
+        <img alt="" src="<%- stream.get('channel').logo %>" />
+    </div>
+    <div class="text">
+        <p class="status"><%- stream.get('channel').status %></p>
+        <p>Streaming <a href="https://www.twitch.tv/directory/game/<%- stream.get('game') %>" target="_blank"><%- stream.get('game') %></a></p>
+    </div>
+    <div class="views-info">
+        <span title="Watching now">
+            <span class="glyphicon glyphicon-user"></span>
+            <b class="viewers"><%- stream.get('viewers') %></b>
+        </span>
+        <span title="Total views">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <b><%- stream.get('channel').views %></b>
+        </span>
+    </div>
 </div>

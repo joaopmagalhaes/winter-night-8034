@@ -1,22 +1,28 @@
 .container-fluid {
     margin-bottom: 30px;
-    width: 960px;
-}
+    width: 990px;
 
-.page-header {
-    text-align: center;
+    .page-header {
+        text-align: center;
 
-    a {
-        font-size: 11px;
+        a {
+            font-size: 11px;
+        }
+
+        p {
+            font-size: 10px;
+            margin: 0;
+        }
     }
 
-    p {
-        font-size: 10px;
-        margin: 0;
+    .content {
+        width: 100%;
     }
 }
 
 .search-container {
+    width: 100%;
+
     .no-results {
         display: none;
         text-align: center;
@@ -43,6 +49,7 @@
 
             .thumb {
                 img {
+                    cursor: pointer;
                     width: 100%;
                 }
             }
@@ -66,6 +73,55 @@
         img {
             height: 60px;
             width: 60px;
+        }
+    }
+}
+
+.stream-container {
+    width: 100%;
+
+    .stream {
+        margin: 20px 0;
+    }
+
+    .info {
+        width: 100%;
+
+        .channel-logo {
+            display: inline-block;
+            vertical-align: top;
+
+            img {
+                height: 60px;
+            }
+        }
+
+        .text {
+            color: #000;
+            display: inline-block;
+            vertical-align: top;
+
+            .status {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        .views-info {
+            display: inline-block;
+            float: right;
+            margin-top: 10px;
+            vertical-align: top;
+
+            span {
+                color: #009ed0;
+                margin-left: 10px;
+                pointer: default;
+
+                span {
+                    margin-right: 5px;
+                }
+            }
         }
     }
 }

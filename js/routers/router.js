@@ -9,7 +9,8 @@ define([
 
     var StreamsRouter = Backbone.Router.extend({
         routes: {
-            '': 'home',
+            '':           'home',
+            'stream/:id': 'stream',
         },
 
         initialize: function() {
@@ -37,6 +38,12 @@ define([
         home: function () {
             require(['views/search'], function (SearchView) {
                 Backbone.View.showView(new SearchView);
+            });
+        },
+
+        stream: function (id) {
+            require(['views/stream'], function (StreamView) {
+                Backbone.View.showView(new StreamView({ id: id }));
             });
         },
     });
