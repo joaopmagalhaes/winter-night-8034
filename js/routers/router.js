@@ -10,7 +10,6 @@ define([
     var StreamsRouter = Backbone.Router.extend({
         routes: {
             '': 'home',
-            'stream*': 'stream',
         },
 
         initialize: function() {
@@ -28,7 +27,7 @@ define([
                     this.currentView.close();
                 }
 
-                $("#twitchapp").html(view.render().el);
+                $("#content").html(view.render().el);
                 this.currentView = view;
 
                 return view;
@@ -38,12 +37,6 @@ define([
         home: function () {
             require(['views/search'], function (SearchView) {
                 Backbone.View.showView(new SearchView);
-            });
-        },
-
-        stream: function() {
-            require(['views/stream'], function (StreamView) {
-                Backbone.View.showView(new StreamView);
             });
         },
     });

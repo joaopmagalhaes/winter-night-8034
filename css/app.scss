@@ -1,0 +1,71 @@
+.container-fluid {
+    margin-bottom: 30px;
+    width: 960px;
+}
+
+.page-header {
+    text-align: center;
+
+    a {
+        font-size: 11px;
+    }
+
+    p {
+        font-size: 10px;
+        margin: 0;
+    }
+}
+
+.search-container {
+    .no-results {
+        display: none;
+        text-align: center;
+        width: 100%;
+
+        p {
+            color: #929292;
+            font-size: 20px;
+            font-style: italic;
+        }
+    }
+
+    .search-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        .search-item {
+            flex: 0 0 32%;
+            margin-bottom: 15px;
+            max-width: 32%;
+            text-align: center;
+
+            .thumb {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .info {
+                text-align: left;
+
+                .viewers {
+                    color: #666;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .loading {
+        display: none;
+        text-align: center;
+        width: 100%;
+
+        img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+}

@@ -4,26 +4,27 @@
 require.config({
     shim: {
         underscore: {
-            exports: '_'
+            exports: '_',
         },
         backbone: {
             deps: [
                 'underscore',
-                'jquery'
+                'jquery',
             ],
-            exports: 'Backbone'
+            exports: 'Backbone',
         },
         backboneLocalstorage: {
             deps: ['backbone'],
-            exports: 'Store'
-        }
+            exports: 'Store',
+        },
     },
     paths: {
         jquery: '../node_modules/jquery/dist/jquery',
         underscore: '../node_modules/underscore/underscore',
         backbone: '../node_modules/backbone/backbone',
         backboneLocalstorage: '../node_modules/backbone.localstorage/backbone.localStorage',
-        text: '../node_modules/requirejs-text/text'
+        text: '../node_modules/requirejs-text/text',
+        bootstrap: '../node_modules/bootstrap/dist/js/bootstrap.min',
     }
 });
 

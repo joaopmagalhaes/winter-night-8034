@@ -1,10 +1,9 @@
-<section class="page-header">
-    <h1>Twitch viewer</h1>
-    <form>
-        <input type="search" name="search" placeholder="See what's popin' on Twitch" value="nba">
-        <button type="button">Search</button>
-    </form>
-</section>
-<section id="results" class="results-wrapper">
-	
-</section>
+<form>
+    <input type="search" name="search" class="form-control" placeholder="Search live streams on Twitch">
+</form>
+<div id="search-items" class="search-items"></div>
+<div id="no-results" class="no-results">
+	<img src="img/sad.png">
+	<p>No results found, sorry</p>
+</div>
+<div class="loading"><img src="img/gears.svg" /></div>

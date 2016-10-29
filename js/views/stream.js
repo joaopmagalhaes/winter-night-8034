@@ -1,11 +1,15 @@
 define([
+    'collections/streams',
+    'views/search',
     'text!templates/stream.html',
-], function(streamTemplate) {
+], function(Streams, searchView, streamTemplate) {
     var StreamView = Backbone.View.extend({
+        el: '#twitchapp',
+
         template: _.template(streamTemplate),
 
         events: {
-            'click .thumb': 'viewStream',
+            'click .back': 'back',
         },
 
         // View 'construtor'
@@ -16,7 +20,6 @@ define([
 
         // Render the template
         render: function() {
-            console.log(this.stream);
             $(this.el).html(this.template({
                 stream: this.stream,
             }));
@@ -24,8 +27,8 @@ define([
             return this;
         },
 
-        viewStream: function() {
-            Backbone.View.showView(new streamView({stream: this.stream}));
+        back: function() {
+            Backbone.View.showView(new searchView);
         },
     });
 

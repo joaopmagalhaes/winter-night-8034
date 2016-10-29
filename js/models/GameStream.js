@@ -6,9 +6,7 @@ define([
     'use strict';
 
     var GameStream = Backbone.Model.extend({
-        // defaults: {
-        //     game: '',
-        // },
+        idAttribute: "_id",
     });
 
     return GameStream;

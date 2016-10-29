@@ -3,10 +3,13 @@ define([
     'text!templates/searchItem.html',
 ], function(streamView, searchItemTemplate) {
     var SearchItemView = Backbone.View.extend({
+        className: 'search-item',
+
         template: _.template(searchItemTemplate),
 
         events: {
             'click .thumb': 'viewStream',
+            'click .streamer': 'viewStream',
         },
 
         // View 'construtor'
