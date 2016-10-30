@@ -31,10 +31,13 @@ define([
         render: function () {
             $(this.el).html(this.template());
 
+            // Get template elements for future DOM handling
             this.$input = this.$('input[name="search"]');
             this.$items = this.$('.search-items');
             this.$loading = this.$('.loading');
             this.$noResults = this.$('#no-results');
+
+            Streams.resetUrl();
 
             return this;
         },
@@ -63,7 +66,9 @@ define([
 
         // Scroll callback listener for infinite scroll
         infinite: function(event) {
-            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            if(this.$input.val().length
+                && $(window).scrollTop() + $(window).height() == $(document).height()
+            ) {
                 this.$loading.show();
                 this.fetch(false);
             }
@@ -76,6 +81,7 @@ define([
 
                 if (this.$input.val().length) {
                     this.$items.empty();
+                    this.$noResults.hide();
                     this.$loading.show();
                     this.fetch(true);
                 }

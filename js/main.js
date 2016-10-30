@@ -25,6 +25,7 @@ require.config({
         backboneLocalstorage: '../node_modules/backbone.localstorage/backbone.localStorage',
         text: '../node_modules/requirejs-text/text',
         bootstrap: '../node_modules/bootstrap/dist/js/bootstrap.min',
+        alertify: '../node_modules/alertify/lib/alertify.min',
     }
 });
 

@@ -1,8 +1,9 @@
 define([
     'collections/streams',
     'text!templates/stream.html',
-    'common'
-], function(Streams, streamTemplate, Common) {
+    'common',
+    'alertify'
+], function(Streams, streamTemplate, Common, alertify) {
     var StreamView = Backbone.View.extend({
         className: 'stream-container',
 
@@ -14,16 +15,18 @@ define([
 
         // View 'construtor'
         initialize: function(params) {
-            if (params.id) {
+            if (params.id && Streams) {
                 this.stream = Streams.get(params.id);
 
                 if (this.stream) {
                     this.render();
                     this.initPoller();
                 } else {
+                    alertify.error('Unable to get stream');
                     Backbone.history.history.back();
                 }
             } else {
+                alertify.error('Sorry, there was an error while trying to get your stream');
                 Backbone.history.history.back();
             }
         },

@@ -20,6 +20,10 @@ define([
 
             return response.streams;
         },
+
+        resetUrl: function() {
+            this.url = 'https://api.twitch.tv/kraken/search/streams?limit=6';
+        },
     });
 
     return new StreamsCollection();
